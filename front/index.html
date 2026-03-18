@@ -34,6 +34,26 @@
             <h2>Serviço de Atendimento Móvel de Urgência</h2>
             <p>Atendimento rápido e eficiente em situações de emergência.</p>
         </section>
+
+        <section class="carousel" aria-label="Galeria de imagens do SAMU">
+            <div class="carousel-container">
+                <button class="prev" aria-label="Imagem anterior">&#10094;</button>
+
+                <div class="carousel-track">
+                    <img src="imagens/samu-logo.png" alt="Atendimento de emergência">
+                    <img src="imagens/samu-192.png" alt="Ambulância SAMU">
+                    <img src="imagens/samu-logo.png" alt="Central de regulação SAMU">
+                </div>
+
+                <button class="next" aria-label="Próxima imagem">&#10095;</button>
+            </div>
+
+            <div class="carousel-indicators">
+                <span class="dot active" aria-label="Ir para o slide 1"></span>
+                <span class="dot" aria-label="Ir para o slide 2"></span>
+                <span class="dot" aria-label="Ir para o slide 3"></span>
+            </div>
+        </section>
     </main>
 
 
@@ -45,6 +65,56 @@
             </a>
         </div>
     </footer>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.querySelectorAll('img'));
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const dots = Array.from(document.querySelectorAll('.dot'));
+        let currentIndex = 0;
+        let autoplayId;
+
+        function updateCarousel(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            dots.forEach((dot, dotIndex) => {
+                dot.classList.toggle('active', dotIndex === currentIndex);
+            });
+        }
+
+        function startAutoplay() {
+            autoplayId = setInterval(() => {
+                updateCarousel(currentIndex + 1);
+            }, 5000);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayId);
+            startAutoplay();
+        }
+
+        prevButton.addEventListener('click', () => {
+            updateCarousel(currentIndex - 1);
+            resetAutoplay();
+        });
+
+        nextButton.addEventListener('click', () => {
+            updateCarousel(currentIndex + 1);
+            resetAutoplay();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateCarousel(index);
+                resetAutoplay();
+            });
+        });
+
+        updateCarousel(0);
+        startAutoplay();
+    </script>
 </body>
 
 </html>
