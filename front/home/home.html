@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMU 192</title>
+    <link rel="stylesheet" href="/home/home.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="site-header__accent"></div>
+        <div class="site-header__content">
+            <a href="index.html" class="site-brand" aria-label="Página inicial do SAMU 192">
+                <img class="site-brand__logo" src="/imagens/samu-logo.png" alt="Logo SAMU 192">
+                <div class="site-brand__text">
+                    <span class="site-brand__name">SAMU</span>
+                    <span class="site-brand__number">192</span>
+                </div>
+            </a>
+
+            <nav class="site-nav" aria-label="Navegação principal">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="/home/home.html" aria-current="page">Home</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="#">Sobre</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="/cursos/cursos.html">Cursos</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="#">Eventos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="site-header__accent"></div>
+    </header>
+
+    <main>
+        <section class="carousel hero-carousel" aria-label="Destaques do SAMU">
+            <div class="carousel-container">
+                <button class="prev" aria-label="Imagem anterior">&#8592;</button>
+
+                <div class="carousel-track">
+                    <article class="carousel-slide">
+                        <div class="slide-visual slide-news-large">
+                            <span class="slide-center-text">Imagem 1</span>
+                            <p class="slide-summary">Resumo sobre a noticia</p>
+                        </div>
+                    </article>
+
+                    <article class="carousel-slide">
+                        <div class="slide-visual slide-news-large">
+                            <span class="slide-center-text">Imagem 2</span>
+                            <p class="slide-summary">Resumo sobre a noticia</p>
+                        </div>
+                    </article>
+
+                    <article class="carousel-slide">
+                        <div class="slide-visual slide-news-large">
+                            <span class="slide-center-text">Imagem 3</span>
+                            <p class="slide-summary">Resumo sobre a noticia</p>
+                        </div>
+                    </article>
+                </div>
+
+                <button class="next" aria-label="Próxima imagem">&#8594;</button>
+            </div>
+        </section>
+
+        <section class="news-grid" aria-label="Noticias e destaques">
+            <article class="feature-card">
+                <div class="feature-card-body">
+                    <button class="mini-arrow" aria-label="Anterior">&#8592;</button>
+                    <button class="mini-arrow" aria-label="Próximo">&#8594;</button>
+                    <p>Resumo sobre a noticia</p>
+                </div>
+            </article>
+
+            <div class="support-cards">
+                <article class="info-card">
+                    <p>Resumo sobre a noticia</p>
+                </article>
+                <article class="info-card">
+                    <p>Resumo sobre a noticia</p>
+                </article>
+                <article class="info-card">
+                    <p>Resumo sobre a noticia</p>
+                </article>
+                <article class="info-card">
+                    <p>Resumo sobre a noticia</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="guidance-section" aria-label="Orientacoes sobre atendimento">
+            <article class="guidance-card">
+                <h2>Quando chamar o samu</h2>
+                <div class="guidance-placeholder"></div>
+            </article>
+
+            <article class="guidance-card">
+                <h2>Quando não chamar o samu</h2>
+                <div class="guidance-placeholder"></div>
+            </article>
+        </section>
+
+        <section class="map-section" aria-label="Localizacao">
+            <div class="map-card">
+                <span>Google maps</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <img src="/imagens/samu-logo.png" alt="Logo do SAMU 192">
+        <a href="tel:192" class="call-button" aria-label="Ligar para o SAMU 192">
+            <span class="phone-icon" aria-hidden="true">&#128222;</span>
+            <span>192</span>
+        </a>
+    </footer>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentIndex = 0;
+        let autoplayId;
+
+        function updateCarousel(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function startAutoplay() {
+            autoplayId = setInterval(() => {
+                updateCarousel(currentIndex + 1);
+            }, 5000);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayId);
+            startAutoplay();
+        }
+
+        prevButton.addEventListener('click', () => {
+            updateCarousel(currentIndex - 1);
+            resetAutoplay();
+        });
+
+        nextButton.addEventListener('click', () => {
+            updateCarousel(currentIndex + 1);
+            resetAutoplay();
+        });
+
+        updateCarousel(0);
+        startAutoplay();
+    </script>
+</body>
+
+</html>

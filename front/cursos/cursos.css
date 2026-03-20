@@ -1,0 +1,300 @@
+.courses-main {
+    padding-bottom: 48px;
+}
+
+.courses-hero {
+    margin-top: 10px;
+}
+
+.courses-hero-card {
+    min-height: 360px;
+    border-radius: 32px;
+    background: linear-gradient(135deg, #d9d9d9 0%, #ececec 100%);
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 36px;
+    align-items: stretch;
+}
+
+.course-overview {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.overview-card {
+    min-height: 190px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 2px dashed rgba(242, 138, 0, 0.6);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 12px;
+}
+
+.overview-card__label,
+.path-card__step {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-orange);
+}
+
+.overview-card h2,
+.path-card h3,
+.prototype-cta__box h2 {
+    font-size: 1.45rem;
+}
+
+.overview-card p,
+.path-card p,
+.prototype-cta__box p {
+    line-height: 1.6;
+}
+
+.section-tag {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-orange);
+    margin-bottom: 18px;
+}
+
+.courses-hero-card h1 {
+    max-width: 720px;
+    font-size: 2.7rem;
+    line-height: 1.12;
+    margin-bottom: 18px;
+}
+
+.courses-intro {
+    max-width: 620px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.courses-hero-side {
+    display: grid;
+    gap: 18px;
+}
+
+.hero-mini-card {
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.64);
+    min-height: 128px;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.heimlich-section {
+    margin-top: 74px;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    font-size: 2.2rem;
+    margin-bottom: 14px;
+}
+
+.section-heading p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.heimlich-frame {
+    border-radius: 32px;
+    background: #ffffff;
+    border: 3px solid var(--accent-orange);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.frame-header {
+    background: var(--accent-orange);
+    color: var(--white);
+    padding: 16px 26px;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.heimlich-content {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.heimlich-visual {
+    height: 100%;
+}
+
+.visual-placeholder {
+    min-height: 100%;
+    height: 100%;
+    border-radius: 28px;
+    background: radial-gradient(circle at top right, rgba(242, 138, 0, 0.18), transparent 30%), linear-gradient(135deg, #d9d9d9 0%, #ececec 100%);
+    display: grid;
+    place-items: center;
+    padding: 32px;
+    text-align: center;
+}
+
+.visual-placeholder span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #585858;
+}
+
+.heimlich-steps {
+    display: grid;
+    gap: 16px;
+}
+
+.step-card {
+    background: #f7fbff;
+    border: 2px solid rgba(242, 138, 0, 0.25);
+    border-radius: 22px;
+    padding: 20px 22px;
+}
+
+.step-card strong {
+    display: block;
+    font-size: 1.08rem;
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.extra-courses {
+    margin-top: 58px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.learning-path {
+    margin-top: 64px;
+}
+
+.learning-path__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.path-card {
+    min-height: 210px;
+    border-radius: 28px;
+    background: #ffffff;
+    border: 2px solid rgba(225, 5, 17, 0.12);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 12px;
+}
+
+.course-card {
+    min-height: 190px;
+    border-radius: 28px;
+    background: var(--placeholder);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 12px;
+}
+
+.course-card h3 {
+    font-size: 1.3rem;
+}
+
+.course-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.prototype-cta {
+    margin-top: 58px;
+}
+
+.prototype-cta__box {
+    border-radius: 32px;
+    background: linear-gradient(135deg, rgba(225, 5, 17, 0.08), rgba(242, 138, 0, 0.14));
+    border: 2px dashed rgba(225, 5, 17, 0.45);
+    padding: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.prototype-cta__button {
+    min-width: 240px;
+    min-height: 72px;
+    border-radius: 18px;
+    background: #ffffff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    border: 2px solid rgba(225, 5, 17, 0.2);
+}
+
+@media (max-width: 980px) {
+    .courses-hero-card,
+    .course-overview,
+    .heimlich-content,
+    .learning-path__grid,
+    .extra-courses {
+        grid-template-columns: 1fr;
+    }
+    .courses-hero-card {
+        padding: 28px;
+        min-height: auto;
+    }
+    .frame-header {
+        flex-direction: column;
+    }
+    .prototype-cta__box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 640px) {
+    .courses-hero-card h1,
+    .section-heading h2,
+    .visual-placeholder span {
+        font-size: 1.6rem;
+    }
+    .courses-intro,
+    .section-heading p,
+    .step-card p,
+    .course-card p {
+        font-size: 0.95rem;
+    }
+    .heimlich-content {
+        padding: 20px;
+    }
+}
